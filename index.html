@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* General Styles */
+        body {
+            background-color: #f9fafb;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        header a:hover {
+            color: #facc15;
+        }
+
+	header a.active {
+            color: #facc15; /* Highlight active link */
+        }
+
+        header .btn-book-now {
+            background-color: #facc15;
+            color: #1e3a8a;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        header .btn-book-now:hover {
+            background-color: #eab308;
+        }
+
+        section {
+            padding: 100px 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image: url("Images/out.jpg");
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 2rem;
+	    color: white;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+
+        .hero-content .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 8px;
+        }
+
+        .hero-content .btn-primary {
+            background-color: #facc15;
+            color: #1e3a8a;
+        }
+
+        .hero-content .btn-primary:hover {
+            background-color: #eab308;
+        }
+
+        .hero-content .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #facc15;
+            color: #fff;
+        }
+
+        .hero-content .btn-secondary:hover {
+            background-color: #facc15;
+            color: #1e3a8a;
+        }
+
+        /* About Section */
+        about.html {
+            background-color: #f7fafc;
+        }
+
+        .about-section {
+            background-color: #68d391;
+            color: #1c3d5a;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 0 auto 40px;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+	
+	h1 {
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 70px;
+            justify-content: center;
+        }
+
+        .grid-item {
+            flex: 1 1 300px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	    background-color: white;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 4px solid #2c5282;
+        }
+
+        .grid-item h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #1a202c;
+        }
+
+        .grid-item p {
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+	/* contact-section */
+	section {
+            padding: 40px 20px;
+        }
+
+	
+	.contact {
+            font-family: Arial, sans-serif;
+            background-color: #f7fafc;
+	    background: url('Images/header.jpg') no-repeat center center fixed;
+    	    background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .contact-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .contact-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        .contact-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .contact-item h3 {
+            font-size: 18px;
+            margin: 0 0 5px;
+        }
+        .contact-item p, .contact-item a {
+            margin: 0;
+            color: #555;
+            text-decoration: none;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #555;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #000;
+        }
+
+.form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: green; /* Yellow background */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 75%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+    }
+
+    .btn-send {
+        background-color: #1e3a8a; /* Blue button */
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .btn-send:hover {
+        background-color: #0d549c;
+    }
+
+
+
+/* Footer Styling */
+    footer {
+        background-color: #000;
+        color: #fff;
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-section {
+        padding: 10px;
+    }
+
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #facc15;
+    }
+
+    .footer-section p {
+        margin: 10px 0;
+        line-height: 1.5;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-section ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer-section ul li a:hover {
+        color: #facc15;
+    }
+
+    .btn-book-now {
+        background-color: #facc15;
+        color: #1e3a8a;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-book-now:hover {
+        background-color: #eab308;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .social-icons img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+    <a href="#" class="logo">King Sukh Guest House</a>
+    <nav>
+	<a href="#hero" class="nav-link">Home</a>
+        <a href="rooms.html" class="nav-link">Rooms</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="https://api.whatsapp.com/send?phone=919007062180" class="btn-book-now">Book Now</a>
+</header>
+
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to our home</h1>
+            <p>The perfect blend of luxury and relaxation.</p>
+            <a href="rooms.html" class="btn btn-primary">Explore Rooms</a>
+            <a href="#contact" class="btn btn-secondary">Contact Us</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+	<h1>About Us</h1>
+        <div class="about-section">
+            <p>Welcome to King Sukh Guest House, your ultimate destination for comfort and luxury. Located in the heart of the city, our guest house provides a serene escape while keeping you close to major attractions like the scenic allure of Biharinath Hill, Baranti Hill, Susunia Hill, Joychandi Hill, Garhpanchkot, Baranti Dam, Maithon Dam, and the captivating Panchat Dam.</p>
+            <p>We pride ourselves on offering personalized services, elegant rooms, and a memorable stay. Whether you're traveling for business or leisure, our dedicated team is here to ensure your stay exceeds your expectations. With premium amenities, 24/7 support, and a commitment to excellence, we aim to make every guest feel at home.</p>
+        </div>
+        <div class="grid">
+            <div class="grid-item">
+                <img src="Images/food.jpg" alt="Complimentary Breakfast">
+                <h3>Restaurant</h3>
+                <p>Enjoy a delicious breakfast included with your stay.</p>
+            </div>
+            <div class="grid-item">
+                <img src="Images/staff.jpg" alt="24/7 Support">
+                <h3>24/7 Support</h3>
+                <p>Our friendly staff is available round-the-clock to assist you.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+<section id="contact" class="contact">
+
+    <h1>Contact Information</h1>
+    <div class="contact-container">
+        <!-- Address -->
+        <div class="contact-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/marker.png" alt="Address Icon">
+            <div>
+                <h3>Address</h3>
+                <p>Beside Barshal Water Tank,<br>Manpur, Barhanti,<br>West Bengal 723156</p>
+            </div>
+        </div>
+        <!-- Email -->
+        <div class="contact-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email Icon">
+            <div>
+                <h3>Email</h3>
+                <p><a href="mailto:kkghosh0099@gmail.com">kkghosh0099@gmail.com</a></p>
+            </div>
+        </div>
+        <!-- Phone -->
+        <div class="contact-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Phone Icon">
+            <div>
+                <h3>Phone</h3>
+                <p><a href="https://api.whatsapp.com/send?phone=919007062180" target="_blank">+91 9007062180</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- Registration Form -->
+<section>
+    <h2 style="color: #FF69B4;">Register with Us</h2>
+    <div class="form-container">
+        <form action="submit_form.php" method="post">
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first_name" placeholder="Enter your first name" required>
+            </div>
+            <!-- Middle Name -->
+            <div class="form-group">
+                <label for="middle-name">Middle Name:</label>
+                <input type="text" id="middle-name" name="middle_name" placeholder="Enter your middle name">
+            </div>
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last_name" placeholder="Enter your last name" required>
+            </div>
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <!-- Mobile Number -->
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+            </div>
+            <!-- City -->
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+            </div>
+            <!-- Message -->
+            <div class="form-group">
+                <label for="message">Write a Message:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn-send" onclick="sendToWhatsApp()">Send</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>
+    function sendToWhatsApp() {
+        // Collect form data
+        const firstName = document.getElementById("first-name").value;
+        const middleName = document.getElementById("middle-name").value || '';
+        const lastName = document.getElementById("last-name").value;
+        const dob = document.getElementById("dob").value;
+        const email = document.getElementById("email").value;
+        const mobile = document.getElementById("mobile").value;
+        const city = document.getElementById("city").value;
+        const message = document.getElementById("message").value;
+
+        // Construct WhatsApp message
+        const whatsappMessage = `Hello, King Sukh Guest House!%0A%0A
+        First Name: ${encodeURIComponent(firstName)}%0A
+        Middle Name: ${encodeURIComponent(middleName)}%0A
+        Last Name: ${encodeURIComponent(lastName)}%0A
+        Date of Birth: ${encodeURIComponent(dob)}%0A
+        Email: ${encodeURIComponent(email)}%0A
+        Mobile: ${encodeURIComponent(mobile)}%0A
+        City: ${encodeURIComponent(city)}%0A
+        Message: ${encodeURIComponent(message)}`;
+
+        // Redirect to WhatsApp
+        const whatsappURL = `https://api.whatsapp.com/send?phone=919007062180&text=${whatsappMessage}`;
+        window.open(whatsappURL, "_blank");
+    }
+</script>
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="#hero" target="_blank"><img src="Images/facebook.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/kingsukhguesthouse/" target="_blank"><img src="Images/instagram.png" alt="Instagram"></a>
+        <a href="#hero" target="_blank"><img src="Images/twitter.png" alt="Twitter"></a>
+        <a href="#hero" target="_blank"><img src="Images/linkedin.png" alt="LinkedIn"></a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Column 1: About -->
+        <div class="footer-section">
+            <h3>King Sukh Guest House</h3>
+            <p>
+                Discover a world of comfort, luxury, and adventure as you explore our curated selection of hotels, making every moment of your getaway truly extraordinary.
+            </p>
+            <a href="https://api.whatsapp.com/send?phone=919007062180" class="btn-book-now">Book Now</a>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Browse Destinations</a></li>
+                <li><a href="#">Special Offers & Packages</a></li>
+                <li><a href="#">Room Types & Amenities</a></li>
+                <li><a href="#">Customer Reviews & Ratings</a></li>
+                <li><a href="#">Travel Tips & Guides</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Services -->
+        <div class="footer-section">
+            <h3>Our Services</h3>
+            <ul>
+                <li>Concierge Assistance</li>
+                <li>Flexible Booking Options</li>
+                <li>Airport Transfers</li>
+                <li>Wellness & Recreation</li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>
+                Address: Beside Barshal Water Tank, Manpur, Barhanti, West Bengal 723156<br>
+                Email: <a href="mailto:kkghosh0099@gmail.com">kkghosh0099@gmail.com</a><br>
+                Phone: <a href="https://api.whatsapp.com/send?phone=919007062180" target="_blank">+91 9007062180</a>
+            </p>
+            <div class="social-icons">
+                <a href="#"><img src="Images/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/kingsukhguesthouse/"><img src="Images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="Images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="Images/linkedin.png" alt="Linkedin"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 King Sukh Guest House. All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

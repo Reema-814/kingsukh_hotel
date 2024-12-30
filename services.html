@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The perfect blend of luxury and relaxation.">
+    <title>services</title>
+    <style>
+/* General container styles */
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 0;
+        }
+
+	header {
+            background-color: #000;
+            color: #fff;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        header a:hover {
+            color: #facc15;
+        }
+
+	header a.active {
+            color: #facc15; /* Highlight active link */
+        }
+
+        header .btn-book-now {
+            background-color: #facc15;
+            color: #1e3a8a;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        header .btn-book-now:hover {
+            background-color: #eab308;
+        }
+
+/* Section title */
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Service grid styling */
+.services {
+    padding: 50px 20px;
+    background-color: #68d391;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-item {
+    background-color: #f7fafc;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.service-item p {
+    color: #555;
+}
+
+/* Statistics grid styling */
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 17rem;
+    justify-items: center;
+}
+
+.statistics-item {
+    background-color: #FFFF66;
+    width: 600px; /* Adjust the width for a rectangular block */
+    height: 150px; /* Adjust the height */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Stack number and text vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    gap: 4 rem;
+}
+
+.statistics-number {
+    font-size: 3rem; /* Adjust font size for the number */
+    font-weight: bold;
+    color: black; /* Yellow color */
+    margin-bottom: 0.5rem; /* Space between number and text */
+}
+
+.statistics-text {
+    font-size: 1.5rem; /* Adjust font size for the text */
+    color: #2b2b2b;
+    font-weight: 600;
+}
+
+
+/* Add spacing between sections */
+.services {
+    margin-bottom: 3rem; /* Adds spacing below the Services section */
+}
+
+.statistics {
+    padding-top: 2rem; /* Adds spacing above the Statistics section */
+}
+
+/* Footer Styling */
+    footer {
+        background-color: #000;
+        color: #fff;
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-section {
+        padding: 10px;
+    }
+
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #facc15;
+    }
+
+    .footer-section p {
+        margin: 10px 0;
+        line-height: 1.5;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-section ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer-section ul li a:hover {
+        color: #facc15;
+    }
+
+    .btn-book-now {
+        background-color: #facc15;
+        color: #1e3a8a;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-book-now:hover {
+        background-color: #eab308;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .social-icons img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+</style>
+</head>
+<body>
+<header>
+    <a href="#" class="logo">King Sukh Guest House</a>
+    <nav>
+	<a href="index.html" class="nav-link">Home</a>
+        <a href="rooms.html" class="nav-link">Rooms</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <a href="https://api.whatsapp.com/send?phone=919007062180" class="btn-book-now">Book Now</a>
+</header>
+
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <img src="https://img.icons8.com/ios-filled/50/000000/security-checked.png" alt="High-Class Security" class="service-icon">
+                <h3 class="service-title">High-Class Security</h3>
+                <p>Your safety is our top priority with round-the-clock surveillance.</p>
+            </div>
+            <div class="service-item">
+                <img src="Images/24.png" alt="24 Hours Room Service" class="service-icon">
+                <h3 class="service-title">24 Hours Room Service</h3>
+                <p>Enjoy exceptional room service available anytime you need.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://img.icons8.com/ios-filled/50/000000/restaurant.png" alt="Restaurant" class="service-icon">
+                <h3 class="service-title">Restaurant</h3>
+                <p>Indulge in delicious meals prepared by our expert chefs.</p>
+            </div>
+            <div class="service-item">
+                <img src="Images/tourist.png" alt="Tourist Guide Support" class="service-icon">
+                <h3 class="service-title">Tourist Guide Support</h3>
+                <p>Explore local attractions with our professional guides.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="statistics" id="statistics">
+    <div class="container">
+        <div class="statistics-grid">
+            <div class="statistics-item">
+                <h2 class="statistics-number">100+</h2>
+                <p class="statistics-text">Bookings Completed</p>
+            </div>
+            <div class="statistics-item">
+                <h2 class="statistics-number">150+</h2>
+                <p class="statistics-text">Happy Customers</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Column 1: About -->
+        <div class="footer-section">
+            <h3>King Sukh Guest House</h3>
+            <p>
+                Discover a world of comfort, luxury, and adventure as you explore our curated selection of hotels, making every moment of your getaway truly extraordinary.
+            </p>
+            <a href="https://api.whatsapp.com/send?phone=919007062180" class="btn-book-now">Book Now</a>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Browse Destinations</a></li>
+                <li><a href="#">Special Offers & Packages</a></li>
+                <li><a href="#">Room Types & Amenities</a></li>
+                <li><a href="#">Customer Reviews & Ratings</a></li>
+                <li><a href="#">Travel Tips & Guides</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Services -->
+        <div class="footer-section">
+            <h3>Our Services</h3>
+            <ul>
+                <li>Concierge Assistance</li>
+                <li>Flexible Booking Options</li>
+                <li>Airport Transfers</li>
+                <li>Wellness & Recreation</li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>
+                Address: Beside Barshal Water Tank, Manpur, Barhanti, West Bengal 723156<br>
+                Email: <a href="mailto:kkghosh0099@gmail.com">kkghosh0099@gmail.com</a><br>
+                Phone: <a href="https://api.whatsapp.com/send?phone=919007062180" target="_blank">+91 9007062180</a>
+            </p>
+            <div class="social-icons">
+                <a href="#"><img src="Images/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/kingsukhguesthouse/"><img src="Images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="Images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="Images/linkedin.png" alt="Linkedin"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 King Sukh Guest House. All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
